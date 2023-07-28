@@ -1,0 +1,42 @@
+export const products = [
+    {
+        id: 1,
+        name: "Product 1",
+        imgName: "https://picsum.photos/id/237/600/450",
+        thumbnail: "https://picsum.photos/id/237/600/450",
+        isAvailable: false,
+        isActive: true,
+    },
+    {
+        id: 2,
+        name: "Product 2",
+        imgName: "https://picsum.photos/id/1084/600/450",
+        thumbnail: "https://picsum.photos/id/1084/600/450",
+        isAvailable: true,
+        isActive: false,
+    },
+    {
+        id: 3,
+        name: "Product 3",
+        imgName: "https://picsum.photos/id/1050/600/450",
+        thumbnail: "https://picsum.photos/id/1050/600/450",
+        isAvailable: true,
+        isActive: false,
+    },
+    {
+        id: 4,
+        name: "Product 4",
+        imgName: "https://picsum.photos/id/1000/600/450",
+        thumbnail: "https://picsum.photos/id/1000/600/450",
+        isAvailable: true,
+        isActive: false,
+    },
+    {
+        id: 5,
+        name: "Product 5",
+        imgName: "https://picsum.photos/id/995/600/450",
+        thumbnail: "https://picsum.photos/id/995/600/450",
+        isAvailable: true,
+        isActive: false,
+    },
+]
