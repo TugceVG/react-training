@@ -25,7 +25,7 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
-            <SiteRoutes handleLogin={handleLogin} />
+            <SiteRoutes user={user} handleLogin={handleLogin} />
           </div>
         </div>
       </div>

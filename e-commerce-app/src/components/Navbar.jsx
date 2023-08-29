@@ -21,7 +21,11 @@ export default function Navbar({ user, handleLogout }) {
                             <NavLink className="nav-link" to="/contact">Contact</NavLink>
                             {
                                 user
-                                    ? <button className="nav-link" onClick={handleLogout}>Logout ({user.name})</button>
+                                    ?
+                                    <>
+                                        <NavLink className="nav-link" to="/fav">Favorities</NavLink>
+                                        <button className="nav-link" onClick={handleLogout}>Logout ({user.name})</button>
+                                    </>
                                     : <NavLink className="nav-link" to="/login">Login</NavLink>
                             }
                         </div>

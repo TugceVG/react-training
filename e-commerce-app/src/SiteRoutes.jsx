@@ -5,8 +5,10 @@ import Contact from "./pages/Contact"
 import PageNotFound from "./pages/PageNotFound";
 import { ProductsLayout, Products, Category, Product } from "./products";
 import Login from "./pages/Login";
+import Fav from "./pages/Fav";
+import PrivateRoute from "./PrivateRoute";
 
-export default function SiteRoutes({ handleLogin }) {
+export default function SiteRoutes({ handleLogin, user }) {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
@@ -18,6 +20,7 @@ export default function SiteRoutes({ handleLogin }) {
             </Route>
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login handleLogin={handleLogin} />} />
+            <Route path="/fav" element={<PrivateRoute user={user} ><Fav /></PrivateRoute>} />
             <Route path="*" element={<PageNotFound />} />
         </Routes>
     )
