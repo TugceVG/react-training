@@ -1,11 +1,11 @@
 import { Products } from "../products";
 
-export default function Home() {
+export default function Home({ user }) {
 
     return (
         <>
             <h1>Home</h1>
-            <Products />
+            <Products user={user} />
         </>
     )
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ProductCard } from ".";
 
-export default function Products() {
+export default function Products({ user }) {
     const [last10Products, setLast10Products] = useState([]);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export default function Products() {
         <div>
             <h2>Products:</h2>
             <div className="row row-cols-sm-3 row-cols-md-4">
-                {last10Products.map(product => <ProductCard key={product.id} product={product} />)}
+                {last10Products.map(product => <ProductCard key={product.id} user={user} product={product} />)}
             </div>
         </div>
     )

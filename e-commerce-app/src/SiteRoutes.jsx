@@ -11,12 +11,12 @@ import PrivateRoute from "./PrivateRoute";
 export default function SiteRoutes({ handleLogin, user }) {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home user={user} />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<ProductsLayout />}>
-                <Route index={true} element={<Products />} />
-                <Route path="category/:categoryName" element={<Category />} />
-                <Route path="product/:productId" element={<Product />} />
+                <Route index={true} element={<Products user={user} />} />
+                <Route path="category/:categoryName" element={<Category user={user} />} />
+                <Route path="product/:productId" element={<Product user={user} />} />
             </Route>
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login handleLogin={handleLogin} />} />

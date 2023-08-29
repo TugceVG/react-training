@@ -1,6 +1,21 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, user }) {
+    const [favs, setFavs] = useState([]);
+
+    function handleClick(product) {
+        let localFavs = JSON.parse(localStorage.getItem("favs")) ?? [];
+        const itemIndex = localFavs.findIndex(localItem => product.id === localItem.id);
+        console.log(itemIndex)
+        if (itemIndex >= 0) {
+            localFavs = localFavs.filter(item => item.id !== product.id);
+        } else {
+            localFavs.push({ id: product.id, title: product.title })
+        }
+        localStorage.setItem("favs", JSON.stringify(localFavs))
+    }
+
     return (
         <>
             <div className="col-sm mb-3">
@@ -12,7 +27,7 @@ export default function ProductCard({ product }) {
                         <h5 className="card-title">{product.title}</h5>
                         <p className="card-text">{product.description.substring(0, 25)}..</p>
                         <p className="lead">{product.price}</p>
-                        <a href="#" className="btn btn-primary">Fav</a>
+                        {user && <a href="#" className="btn btn-primary" onClick={() => handleClick(product)}>Fav</a>}
                     </div>
                 </div>
             </div>

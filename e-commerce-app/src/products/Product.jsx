@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-export default function Product() {
+export default function Product({ user }) {
     const { productId } = useParams();
     const [product, setProduct] = useState(null);
 
