@@ -14,13 +14,11 @@ export default function ThemeIcon() {
     const [theme, setTheme] = useState("light");
 
     function handleTheme() {
-        if (theme === "light") {
-            document.documentElement.setAttribute('data-bs-theme', 'dark');
-            setTheme("dark")
-        } else {
-            document.documentElement.setAttribute('data-bs-theme', 'light');
-            setTheme("light")
-        }
+        setTheme(prev => {
+            const themeInfo = prev === "light" ? "dark" : "light";
+            document.documentElement.setAttribute('data-bs-theme', themeInfo);
+            return themeInfo;
+        })
     }
 
     return (
