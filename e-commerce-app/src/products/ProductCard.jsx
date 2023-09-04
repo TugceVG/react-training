@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-export default function ProductCard({ product, user }) {
-    const [favs, setFavs] = useState([]);
+import { SiteContext } from "../context/SiteContext";
+
+export default function ProductCard({ product }) {
+    const { user } = useContext(SiteContext)
 
     function handleClick(product) {
         let localFavs = JSON.parse(localStorage.getItem("favs")) ?? [];
