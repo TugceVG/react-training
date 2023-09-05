@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { SiteContext } from "../context/SiteContext";
+import ThemeIcon from "./ThemeIcon";
 
 export default function Navbar() {
     const { user, handleLogout } = useContext(SiteContext)
@@ -33,6 +34,7 @@ export default function Navbar() {
                             }
                         </div>
                     </div>
+                    <ThemeIcon className="ms-auto" />
                 </div>
             </nav>
         </>
