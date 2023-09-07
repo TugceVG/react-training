@@ -1,26 +1,17 @@
-import { useState } from 'react';
+import { useReducer } from 'react';
+
+import { DECREMENT, INCREMENT, RESET } from "./reducer/actionType";
+import { countReducer, initialCountState } from './reducer/count';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  function increment() {
-    setCount(prev => prev + 1)
-  }
-
-  function decriment() {
-    setCount(prev => prev - 1)
-  }
-
-  function reset() {
-    setCount(0)
-  }
+  const [count, dispatch] = useReducer(countReducer, initialCountState);
 
   return (
     <>
       <h2>Count :: {count}</h2>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decriment}>Decrement</button>
-      <button onClick={reset}>Reset</button>
+      <button onClick={() => dispatch(INCREMENT)}>Increment</button>
+      <button onClick={() => dispatch(DECREMENT)}>Decrement</button>
+      <button onClick={() => dispatch(RESET)}>Reset</button>
     </>
   )
 }
