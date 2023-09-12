@@ -1,4 +1,4 @@
-import Todo from "./todo/Todo";
+import Todo from "./Todo";
 
 function App() {
 
@@ -9,4 +9,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
