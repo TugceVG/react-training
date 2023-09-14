@@ -16,12 +16,14 @@ export default function Todo() {
     }
 
     return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Add an item on your list" />
-                <button type="submit" name="add">Add</button>
-            </form>
-            <Todos />
-        </>
+        <div className="card my-3">
+            <div className="card-body">
+                <form onSubmit={handleSubmit}>
+                    <input type="text" className="rounded p-2 me-1" placeholder="Add an item on your list" />
+                    <button type="submit" className="btn btn-danger">Add</button>
+                </form>
+                <Todos />
+            </div>
+        </div>
     )
 }
