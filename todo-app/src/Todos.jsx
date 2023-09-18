@@ -8,7 +8,7 @@ export default function Todos() {
         <div className="container my-3">
             <strong>TODO List </strong>
             <button
-                className="btn btn-danger"
+                className="btn btn-primary"
                 onClick={() => dispatch({ type: RESET_TODO, payload: [] })}
             >
                 Clear List

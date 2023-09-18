@@ -20,7 +20,7 @@ export default function Todo() {
             <div className="card-body">
                 <form onSubmit={handleSubmit}>
                     <input type="text" className="rounded p-2 me-1" placeholder="Add an item on your list" />
-                    <button type="submit" className="btn btn-danger">Add</button>
+                    <button type="submit" className="btn btn-primary">Add</button>
                 </form>
                 <Todos />
             </div>
